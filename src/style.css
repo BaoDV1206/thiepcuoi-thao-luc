@@ -15,14 +15,31 @@ body {
 }
 
 .container {
-    background: white;
-    max-width: 500px;
-    width: 100%;
-    padding: 40px 5px;
+    background-image: url('image/hinh-cuoi01.jpg');
+    background-size: cover;
+    background-position: center;
+    
+    max-width: 480px;
+    width: 95%;
+    padding: 30px 15px;
     border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     text-align: center;
-    border: 8px double #f8bbd0;
+    border: 6px double #fff; /* Đổi viền trắng cho nổi bật trên ảnh */
+    position: relative;
+}
+
+h1, h2, h3, h4, p, span, div {
+    /* Viền 1px mỏng và thêm 4px độ nhòe (blur) để trông tự nhiên hơn */
+    text-shadow: 
+        0 0 4px #fff, 
+        -1px -1px 0 #fff,  
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff;
+    
+    color: #333; /* Màu chữ chính nên dùng màu đậm để tương phản */
+    margin: 8px 0;
 }
 
 #guest-name {
@@ -68,9 +85,64 @@ body {
 }
 
 .couple-section .name {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--primary-color);
     margin: 0;
+}
+
+/* PHẦN LỊCH CƯỚI */
+.calendar-section {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.calendar-month {
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-size: 0.85rem;
+}
+
+.day-name {
+    font-weight: bold;
+    color: #ad1457;
+    border-bottom: 1px solid #f8bbd0;
+    padding-bottom: 3px;
+}
+
+.calendar-grid div {
+    padding: 5px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* KHOANH HÌNH TRÁI TIM NGÀY 28 */
+.wedding-day {
+    color: white !important;
+    font-weight: bold;
+    text-shadow: none !important; /* Bỏ viền chữ cho ngày này */
+}
+
+.wedding-day::before {
+    content: "❤"; /* Dùng icon trái tim làm nền */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #ff4d4d;
+    z-index: -1;
+    opacity: 0.9;
 }
 
 .heart { color: red; animation: heartBeat 1.2s infinite; }
