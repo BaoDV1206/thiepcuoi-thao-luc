@@ -1,163 +1,326 @@
 :root {
     --primary-color: #d63384;
-    --text-color: #4a4a4a;
-    --bg-color: #fffafa;
+    --text-color: #333;
+    --overlay-bg: rgba(255, 255, 255, 0.45);
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     background-color: #fce4ec;
     font-family: 'Quicksand', sans-serif;
-    color: var(--text-color);
     display: flex;
     justify-content: center;
-    padding: 5px;
-    line-height: 1.6;
+    padding: 0px;
+    min-height: 100vh;
 }
 
-.container {
-    background-image: url('image/hinh-cuoi01.jpg');
+.wedding-card {
+    max-width: 480px;
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    border: 6px double #fff;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column; /* Đảm bảo 3 phần xếp dọc */
+}
+
+/* --- PHẦN 1: HERO SECTION (CÓ HÌNH NỀN) --- */
+.part-1-hero {
+    background-image: linear-gradient(var(--overlay-bg), var(--overlay-bg)), 
+                      url('image/hinh-cuoi01.jpg');
     background-size: cover;
     background-position: center;
-    
-    max-width: 480px;
-    width: 95%;
-    padding: 30px 15px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    text-align: center;
-    border: 6px double #fff; /* Đổi viền trắng cho nổi bật trên ảnh */
-    position: relative;
-}
-
-h1, h2, h3, h4, p, span, div {
-    /* Viền 1px mỏng và thêm 4px độ nhòe (blur) để trông tự nhiên hơn */
-    text-shadow: 
-        0 0 4px #fff, 
-        -1px -1px 0 #fff,  
-         1px -1px 0 #fff,
-        -1px  1px 0 #fff,
-         1px  1px 0 #fff;
-    
-    color: #333; /* Màu chữ chính nên dùng màu đậm để tương phản */
-    margin: 8px 0;
-}
-
-#guest-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin: 10px 0;
-}
-
-.wedding-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #880e4f;
-    text-transform: uppercase;
-}
-
-.icon-sep { margin: 15px 0; font-size: 1.2rem; }
-
-/* Chia đôi Nhà Trai - Nhà Gái */
-.family-info {
+    padding: 50px 20px 30px; /* Giảm padding bottom để tiếp nối tự nhiên với phần 2 */
     display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.family-side { width: 45%; }
-.family-side h3 {
-    font-size: 0.9rem;
-    border-bottom: 1px solid #f8bbd0;
-    padding-bottom: 5px;
-    color: #ad1457;
-}
-
-.parent-name { font-weight: 700; margin: 5px 0; }
-
-/* Cô dâu & Chú rể */
-.couple-section {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-family: 'Great Vibes', cursive;
+    text-align: center;
 }
 
-.couple-section .name {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+/* Giới hạn hiệu ứng bóng chữ chỉ trong phần 1 để không làm lem nhem phần 2 & 3 */
+.part-1-hero * {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    color: var(--text-color);
+}
+
+/* --- PHẦN 2 & 3: BỐ CỤC CHUNG (NỀN TRƠN) --- */
+.part-2-calendar, 
+.part-3-location {
+    background-color: #fff; /* Xóa hình nền, đặt nền trắng */
+    padding: 10px 20px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- PART 4: ROMANTIC QUOTE SECTION (CẬP NHẬT) --- */
+.part-4-quote {
+    background-color: #fcfcfc;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid #f0eaec;
+    border-bottom: 1px solid #f0eaec;
+}
+
+.quote-container {
+    max-width: 90%;
+}
+
+/* Kiểu hiển thị ngang cho Header */
+.invitation-header-inline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* Khoảng cách giữa trái tim và chữ */
+    margin-bottom: 25px;
+}
+
+.invitation-header-inline h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    color: #555; /* Màu chữ xám sẫm */
     margin: 0;
 }
 
-/* PHẦN LỊCH CƯỚI */
-.calendar-section {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 15px;
-    border-radius: 15px;
-    margin-top: 20px;
+/* Định dạng trái tim màu đỏ */
+.heart-inline {
+    font-size: 1.1rem;
+    color: red; /* Màu đỏ tươi theo yêu cầu */
+}
+
+/* --- PHẦN TEXT BÊN DƯỚI --- */
+.quote-text, .quote-invite {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    font-style: italic;
+}
+
+.quote-text {
+    margin-bottom: 20px;
+}
+
+.quote-date {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin: 25px 0;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* --- PART 5: THANK YOU IMAGE SECTION --- */
+.part-5-thank-you {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 30px; /* Tạo khoảng trống phía trên chữ WEDDING */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header: WEDDING INVITATION 2026 */
+.thank-you-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+}
+
+.thank-you-header .side-text {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+.thank-you-header .center-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Container chứa ảnh và chữ */
+.thank-you-image-container {
+    position: relative;
+    width: 100%;
+    display: flex; /* Xóa khoảng trắng thừa dưới đáy ảnh */
+}
+
+.thank-you-photo {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo */
+    display: block;
+}
+
+/* Chữ Cảm ơn đè lên hình */
+.thank-you-overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px 20px; /* Padding top lớn để tạo độ dốc gradient */
+    text-align: center;
+    color: #fff; /* Chữ màu trắng */
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    /* Phủ một lớp bóng đen mờ từ dưới lên để làm nổi bật chữ trắng */
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Thêm viền bóng cho chữ */
+}
+
+/* --- PART 2: CALENDAR OVERLAY SECTION --- */
+.part-2-calendar-overlay {
+    width: 100%;
+    height: 550px; /* Cố định chiều cao tổng thể để hiển thị ảnh */
+    background-image: url('image/hinhdemo-2.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+    /* Dùng Flexbox để ép khối lịch rớt xuống dưới cùng */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Khối Lịch chiếm 50% không gian phía dưới */
+.calendar-bottom-half {
+    width: 100%;
+    height: 55%; /* Phủ khoảng 55% để có hiệu ứng chuyển màu mượt hơn */
+    padding: 30px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Lớp phủ chuyển từ trong suốt (trên) xuống trắng tinh (dưới) */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 35%, rgba(255, 255, 255, 1) 100%);
 }
 
 .calendar-month {
-    font-weight: bold;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    font-weight: bold; 
+    font-size: 1.1rem; 
+    color: #ad1457; 
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px #fff; /* Chống lóa nhẹ cho viền chữ */
 }
 
 .calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    font-size: 0.85rem;
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 8px; 
+    font-size: 0.9rem; 
+    color: var(--text-color);
+    width: 100%;
+    text-align: center;
 }
 
-.day-name {
-    font-weight: bold;
-    color: #ad1457;
-    border-bottom: 1px solid #f8bbd0;
-    padding-bottom: 3px;
-}
-
-.calendar-grid div {
-    padding: 5px 0;
-    position: relative;
+/* Thiết lập riêng cho trái tim ngày cưới để nó luôn nổi bật trên nền overlay */
+.wedding-day {
+    color: white !important; 
+    font-weight: bold; 
+    position: relative; 
     z-index: 1;
 }
 
-/* KHOANH HÌNH TRÁI TIM NGÀY 28 */
+.wedding-day::before {
+    content: "❤"; 
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    font-size: 2.4rem; 
+    color: #ff4d4d; 
+    z-index: -1; 
+    text-shadow: none;
+}
+/* --- STYLES CHI TIẾT CÁC THÀNH PHẦN --- */
+#guest-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: var(--primary-color) !important;
+    margin-bottom: 10px;
+}
+
+.icon-sep { font-size: 1.5rem; margin: 15px 0; color: var(--primary-color) !important; }
+
+.couple-section {
+    display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;
+}
+
+.couple-section .name {
+    font-family: 'Great Vibes', cursive; font-size: 1.5rem; color: var(--primary-color) !important;
+}
+
+.heart { 
+    color: red !important; font-size: 2rem; animation: heartBeat 1.2s infinite; text-shadow: none !important;
+}
+
+.family-info {
+    display: flex; justify-content: space-between; width: 100%; margin: 25px 0;
+}
+
+.family-side h3 {
+    font-size: 0.85rem; border-bottom: 2px solid var(--primary-color); color: #ad1457 !important; margin-bottom: 10px; padding-bottom: 3px;
+}
+
+.parent-name { font-weight: 700; font-size: 1rem; margin: 5px 0; }
+
+.divider {
+    border: none; border-top: 1px solid var(--primary-color); width: 60%; margin: 20px auto;
+}
+
+.wedding-title {
+    font-weight: bold; font-size: 1.4rem; color: #880e4f !important; text-transform: uppercase;
+}
+
+/* Cập nhật Calendar & Location Box - Bỏ kính mờ (backdrop-filter) vì nền đã là trắng */
+.calendar-section, .location-box {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Bóng đổ nhẹ hơn cho tinh tế */
+}
+
+.calendar-month {
+    font-weight: bold; font-size: 1.1rem; color: #ad1457; margin-bottom: 15px;
+}
+
+.calendar-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; font-size: 0.9rem; color: var(--text-color);
+}
+
+.day-name { font-weight: bold; color: #ad1457 !important; }
+
 .wedding-day {
-    color: white !important;
-    font-weight: bold;
-    text-shadow: none !important; /* Bỏ viền chữ cho ngày này */
+    color: white !important; font-weight: bold; position: relative; z-index: 1;
 }
 
 .wedding-day::before {
-    content: "❤"; /* Dùng icon trái tim làm nền */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    color: #ff4d4d;
-    z-index: -1;
-    opacity: 0.9;
+    content: "❤"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.4rem; color: #ff4d4d; z-index: -1; text-shadow: none;
 }
 
-.heart { color: red; animation: heartBeat 1.2s infinite; }
+.location-box { border: 1px dashed var(--primary-color); margin-top: 10px;}
+.place-name { font-weight: bold; color: #c2185b !important; font-size: 1.2rem; margin: 10px 0 5px;}
+.address { font-size: 0.95rem; }
 
 @keyframes heartBeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.3); }
     100% { transform: scale(1); }
 }
-
-.location-box {
-    background: #fff0f3;
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px dashed var(--primary-color);
-}
-
-.place-name { font-weight: bold; font-size: 1.1rem; color: #c2185b; }
