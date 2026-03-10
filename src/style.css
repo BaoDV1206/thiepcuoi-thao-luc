@@ -26,14 +26,110 @@ body {
     display: flex;
     flex-direction: column; /* Đảm bảo 3 phần xếp dọc */
 }
+/* Container thông tin gia đình */
+.family-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
 
+.vertical-line {
+  width: 1px;
+  height: 80px;
+  background-color: #333;
+}
+
+/* Thiết kế cụm ngày tháng đặc trưng của mẫu */
+.date-big-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.side-label {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.main-number {
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.wedding-silhouette {
+  display: flex;          /* Kích hoạt Flexbox */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center;     /* Căn giữa theo chiều dọc (quan trọng để icon không lệch) */
+  gap: 20px;               /* Khoảng cách giữa các icon */
+  margin: 20px 0;
+}
+
+.wedding-silhouette img {
+  width: 80px;            /* Điều chỉnh kích thước icon vừa vặn */
+  height: auto;
+  object-fit: contain;
+}
+
+.event-name {
+  color: #d19a9a; /* Màu hồng nhạt như trong ảnh */
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+.family-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Khoảng cách từ chữ đến vạch kẻ dọc */
+    width: 100%;
+}
+
+.family-box {
+    flex: 1;
+    max-width: 250px; /* Giới hạn độ rộng để text không bị quá dài */
+}
+
+/* NHÀ GÁI: Căn lề phải để chữ sát vào vạch kẻ */
+.left-side {
+    text-align: right;
+}
+
+/* NHÀ TRAI: Căn lề trái để chữ sát vào vạch kẻ */
+.right-side {
+    text-align: left;
+}
+
+.family-box h3 {
+    font-size: 1.1rem;
+    color: #8b1515;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.family-box p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: nowrap; /* Ngăn chữ bị xuống dòng làm mất cân đối */
+}
+
+.vertical-line {
+    width: 1.5px;
+    height: 70px;
+    background-color: #333; /* Màu đen hoặc xám đậm cho rõ nét */
+}
 /* --- PHẦN 1: HERO SECTION (CÓ HÌNH NỀN) --- */
 .part-1-hero {
-    background-image: linear-gradient(var(--overlay-bg), var(--overlay-bg)), 
-                      url('image/hinh-cuoi01.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 50px 20px 30px; /* Giảm padding bottom để tiếp nối tự nhiên với phần 2 */
+    padding: 10px 10px 10px; /* Giảm padding bottom để tiếp nối tự nhiên với phần 2 */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +140,46 @@ body {
 .part-1-hero * {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff;
     color: var(--text-color);
+}
+
+
+.wedding-header {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative; /* Để các lớp chữ có thể xếp chồng nếu muốn */
+}
+
+.main-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3.5rem;      /* Độ lớn vừa phải cho mobile */
+  font-weight: 300;       /* Nét chữ thanh mảnh */
+  letter-spacing: 12px;   /* Khoảng cách chữ rộng đặc trưng của thiệp cao cấp */
+  color: #333;
+  margin: 10px;
+  line-height: 1;
+  text-transform: uppercase; /* Luôn viết hoa */
+}
+
+.sub-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem;
+  color: #d4a373;         /* Màu vàng đồng hoặc hồng đất nhẹ */
+  margin-top: -10px;      /* Kéo chữ lên gần hoặc chồng nhẹ lên chữ WEDDING */
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* Responsive cho màn hình nhỏ hơn */
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5rem;
+    letter-spacing: 8px;
+  }
+  .sub-title {
+    font-size: 2rem;
+  }
 }
 
 /* --- PHẦN 2 & 3: BỐ CỤC CHUNG (NỀN TRƠN) --- */
