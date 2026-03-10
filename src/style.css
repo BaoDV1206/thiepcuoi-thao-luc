@@ -187,7 +187,7 @@ body {
 .part-2-calendar-overlay {
     width: 100%;
     height: 550px; /* Cố định chiều cao tổng thể để hiển thị ảnh */
-    background-image: url('image/hinh-cuoi03.jpg');
+    background-image: url('image/image-calender.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 20px;
@@ -253,7 +253,7 @@ body {
 
 .part-6-welcome{
   height:100vh;
-  background-image: url('image/hinh-cuoi03.jpg');
+  background-image: url('image/imgae-slider1.jpg');
   background-size:cover;
   background-position:center;
   display:flex;
@@ -353,6 +353,503 @@ body {
   text-shadow:
   0 4px 10px rgba(0,0,0,0.8);
 }
+
+/* =========================================
+   PART 7: LOVE STORY SECTION
+========================================= */
+.part-7-love-story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fffaf9; /* Màu nền pastel nhẹ nhàng, có thể đổi theo theme */
+}
+
+.love-story-header {
+  margin-bottom: 25px;
+}
+
+.love-title-vi {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 3px;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+}
+
+.love-title-en {
+  font-family: 'Dancing Script', cursive; /* Hoặc dùng 'Great Vibes' */
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #c98a7a; /* Màu cam đất/hồng nhạt thanh lịch */
+  margin: 0;
+}
+
+.love-story-image-container {
+  width: 100%;
+  max-width: 400px; /* Giới hạn kích thước ảnh trên mobile/desktop */
+  border-radius: 12px; /* Bo góc mềm mại */
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Đổ bóng tạo chiều sâu như khung ảnh thật */
+}
+
+.love-story-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Bo góc nhẹ cho ảnh bên trong */
+  object-fit: cover;
+}
+.love-story-photo {
+  width: 100%;
+  aspect-ratio: 5 / 5; 
+  object-fit: cover; 
+  object-position: center 20%; 
+  display: block;
+  border-radius: 8px;
+}
+
+/* =========================================
+   PART 8: FALL IN LOVE SECTION
+========================================= */
+.part-8-fall-in-love {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  overflow: hidden; /* Ngăn chặn thanh cuộn ngang khi ảnh bị đẩy ra ngoài màn hình */
+}
+
+.fall-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.fall-in-love-image-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.fall-in-love-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- ANIMATION LOGIC --- */
+/* Trạng thái ban đầu: Vị trí lệch sang trái 100px và tàng hình (opacity: 0) */
+.slide-from-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform; /* Báo cho GPU chuẩn bị tài nguyên render */
+}
+
+/* Trạng thái khi JS kích hoạt: Trở về vị trí gốc (0) và hiện rõ */
+.slide-from-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================================
+   PART 9: THE JOURNEY SECTION
+========================================= */
+.part-9-journey {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4; /* Màu nền xám nhạt làm nổi bật nội dung */
+}
+
+/* --- Container chứa Icon và Text --- */
+.journey-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Khoảng cách giữa chữ Hỷ và dòng chữ tiếng Anh */
+  margin-bottom: 30px;
+}
+
+/* --- Styling cho chữ Hỷ Unicode --- */
+.traditional-icon {
+  font-size: 3.5rem;
+  color: #a03c3c; /* Mã màu đỏ bã trầu giống thiết kế gốc */
+  line-height: 1;
+  font-family: "Times New Roman", serif; /* Đảm bảo hệ điều hành render đúng font cổ điển */
+}
+
+/* --- Styling cho chữ FALL INLOVE --- */
+.journey-title {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.journey-title span {
+  font-family: "Times New Roman", serif; /* Dùng font có chân (Serif) để tạo sự sang trọng */
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* --- Styling cho đoạn Quote --- */
+.journey-quote {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.journey-quote p {
+  font-family: 'Quicksand', sans-serif; /* Tái sử dụng font Quicksand đã có sẵn */
+  font-size: 1.1rem;
+  color: #888;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* --- Styling cho hình ảnh bên dưới --- */
+.journey-image-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+.journey-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* --- ANIMATION LOGIC --- */
+.slide-from-left {
+  opacity: 0;
+  transform: translateX(-100px); /* Lệch sang trái 100px */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.slide-from-right {
+  opacity: 0;
+  transform: translateX(100px); /* Lệch sang phải 100px */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+/* Class dùng chung để kích hoạt trạng thái hiển thị cho cả 2 hướng */
+.slide-from-left.is-visible,
+.slide-from-right.is-visible {
+  opacity: 1;
+  transform: translateX(0); /* Trở về vị trí trung tâm */
+}
+
+/* =========================================
+   PART 10: PERFECTION SECTION
+========================================= */
+.part-10-perfection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #f4f4f4; /* Nền xám nhạt như Part 9 */
+}
+
+/* --- Container chứa Icon và Text --- */
+.perfection-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Khoảng cách giữa chữ Hỷ và văn bản */
+  margin-bottom: 30px;
+}
+
+/* TÁI SỬ DỤNG CSS CỦA .traditional-icon TRONG PART 9
+   (Chữ 囍 màu đỏ bã trầu #a03c3c)
+*/
+
+/* --- Chữ tiếng Anh (Font Serif) --- */
+.perfection-title {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.perfection-title span {
+  font-family: "Times New Roman", serif; /* Font có chân sang trọng */
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* --- Đoạn Quote (Font Sans-serif) --- */
+.perfection-quote {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.perfection-quote p {
+  font-family: 'Quicksand', sans-serif; /* Font Quicksand đã có */
+  font-size: 1.1rem;
+  color: #888;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* --- Container cho 2 ảnh xếp ngang --- */
+.perfection-images-container {
+  display: flex;
+  justify-content: space-around; /* Phân bổ khoảng cách đều */
+  width: 100%;
+  max-width: 800px; /* Giới hạn độ rộng container */
+  gap: 5px;
+}
+
+/* --- Styling cho 2 hình ảnh bên dưới --- */
+.perfection-photo {
+  height: 250px; /* Cố định chiều cao 200px theo yêu cầu */
+  width: auto;
+  max-width: 45%; /* Giới hạn độ rộng để tránh tràn trên mobile nhỏ */
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  object-fit: cover; /* Cắt ảnh để vừa khung hình */
+}
+
+/* =========================================
+   PART 11: MARRY ME SECTION
+========================================= */
+.part-11-marry-me {
+  width: 100%;
+  background-color: #f4f4f4; /* Đồng bộ nền với part 9, 10. Đổi thành #fff nếu muốn nền trắng */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 50px 0;
+}
+
+/* --- Top Banner --- */
+.marry-banner {
+  width: 100%;
+  max-width: 600px; /* Căn độ rộng cho vừa với form thiệp */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  margin: 30px 0;
+  font-family: "Times New Roman", serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+/* --- Image Wrapper --- */
+.marry-image-wrapper {
+  position: relative; /* Setup "tọa độ gốc" để chữ bám vào */
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.marry-bg-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Text Overlay (Chữ nằm đè lên ảnh) --- */
+.marry-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa tuyệt đối xác định theo trục X, Y */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Font chữ bay bổng và hiệu ứng đổ bóng */
+.marry-line-1,
+.marry-line-2 {
+  font-family: 'Great Vibes', cursive; /* Bạn có thể đổi sang 'Dancing Script' nếu thích */
+  color: #ffffff;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Bóng đen nhẹ giúp chữ không bị chìm */
+}
+
+.marry-line-1 {
+  font-size: 4rem;
+}
+
+.marry-line-2 {
+  font-size: 3.5rem;
+}
+
+/* =========================================
+   PART 12: RSVP SECTION
+========================================= */
+.part-12-rsvp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.rsvp-title {
+  font-family: "Times New Roman", serif;
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.rsvp-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Khoảng cách giữa các input */
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  background-color: transparent;
+  border: 2px solid #8b1515; /* Màu đỏ bã trầu */
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Tùy chỉnh mũi tên của Select dropdown */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%238b1515%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px top 50%;
+  background-size: 12px auto;
+}
+
+.submit-btn {
+  background-color: #8b1515;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-family: "Times New Roman", serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #6a0f0f;
+}
+
+.form-feedback {
+  margin-top: 20px;
+  font-family: 'Quicksand', sans-serif;
+  color: #28a745; /* Màu xanh success */
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================================
+   PART 13: FINAL THANK YOU SECTION
+========================================= */
+.part-13-final-thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  /* Padding dưới lớn (80px) để tạo khoảng trống khi cuộn đến cuối trang */
+  padding: 60px 20px 80px 20px; 
+  background-color: #f4f4f4; /* Đồng bộ nền xám nhạt với các Part trên */
+}
+
+/* --- Chữ ký Thank You --- */
+.final-thank-you-title {
+  font-family: 'Great Vibes', cursive; /* Tái sử dụng font đã load ở Head */
+  font-size: 5.5rem; /* Kích thước siêu lớn tạo điểm nhấn */
+  color: #333; /* Màu xám đậm/đen giống thiết kế */
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  line-height: 1;
+}
+
+/* --- Đoạn văn bản Cảm ơn --- */
+.final-thank-you-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* --- Media Queries (Responsive cho Mobile) --- */
+@media (max-width: 600px) {
+  .part-13-final-thanks {
+    padding: 40px 15px 60px 15px;
+  }
+
+  .final-thank-you-title {
+    font-size: 4.5rem; /* Thu nhỏ chữ trên màn hình điện thoại */
+  }
+
+  .final-thank-you-text {
+    font-size: 1rem;
+  }
+}
+/* --- Media Queries (Xử lý Responsive cho Mobile) --- */
+@media (max-width: 600px) {
+  .marry-banner {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+    margin: 20px 0;
+  }
+  
+  .marry-line-1 {
+    font-size: 2.8rem;
+  }
+  
+  .marry-line-2 {
+    font-size: 2.2rem;
+  }
+}
+/* --- ANIMATION TÁI SỬ DỤNG --- */
+/* .slide-from-left, .slide-from-right, và .is-visible 
+   ĐÃ ĐƯỢC ĐỊNH NGHĨA TRƯỚC ĐÓ */
 
 /* ===== ANIMATION ===== */
 
