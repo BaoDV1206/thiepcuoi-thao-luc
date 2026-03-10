@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.warn("No animated elements found to observe.");
     }
+    
 });
 // Chạy hàm khi trang web tải xong
 window.onload = getGuestName;

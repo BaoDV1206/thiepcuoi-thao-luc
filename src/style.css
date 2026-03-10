@@ -277,6 +277,7 @@ body {
   text-align:center;
   color:pink;
   padding:20px;
+  margin-top: 400px;
 }
 
 /* tiêu đề */
@@ -290,7 +291,7 @@ body {
   0 4px 15px rgba(0,0,0,0.8),
   0 2px 5px rgba(0,0,0,0.6);
 
-  margin-bottom: 200px;
+  margin-bottom: 10px;
 }
 
 /* tên cô dâu chú rể */
@@ -345,7 +346,7 @@ body {
 /* ngày cưới */
 
 .welcome-date{
-  margin-top:220px;
+  margin-top:10px;
   font-size:30px;
   font-weight:bold;
   letter-spacing:3px;
